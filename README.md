@@ -25,3 +25,18 @@
 
 **Portanto o salario final sera feito dessa forma:**
 - Salário Final: $1927.02 + $200 + $250 + $1000 = $4377.02
+
+### 🎨 Estilizando
+- Foi usada a paleta de *cor nº 45* do site Mambo Mambo, que usa tons de amarelo, verde e azul. Esta combinação transmite uma sensação tropical e descontraída. [Ver paleta](https://www.canva.com/pt_br/aprenda/cores-para-sites-50-paginas-impactantes/)
+
+
+### 📚 Referências
+
+- [Piso Regional do Paraná](https://www.aen.pr.gov.br/Noticia/Maior-do-Brasil-governador-confirma-novo-Piso-Regional-que-vai-de-R-18-mil-R-21-mil#:~:text=Na%20primeira%2C%20que%20contempla%20os,de%20R%24%201.927%2C02/)
+[PDF Contexto]()
+
+## 👩‍💻 Feito por:
+
+**Larissa Manrique**
+- GitHub: [larissassk](https://github.com/larissassk)
+- LinkedIn: [Larissa Manrique](https://www.linkedin.com/in/larissa-manrique/)
