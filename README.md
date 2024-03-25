@@ -1,6 +1,6 @@
 # sistema-de-meritocracia
 # Sistema de Salário
-- O Sistema de Salário para Vendedores é bem prático e eficiente, pois simplifica o processo de cálculo de salário para vendedores com base em suas metas de vendas semanais e mensais, propostas pela empresa. Para usar este sistema, é so inserir seu nome e a suas metas de vendas, permitindo que a empresa calcule automaticamente o salário final de acordo com às metas.
+- O Sistema de Salário para Vendedores simplifica o cálculo do salário com base nas metas de vendas semanais e mensais. Os vendedores inserem seus nomes e metas de vendas em um formulário. O script PHP realiza os cálculos e mostra o salário final na página. 
 
 ## Funcionalidades
 
