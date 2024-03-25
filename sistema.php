@@ -73,76 +73,92 @@
     </style>
 </head>
 <body>
-    <form class="formulario" method="post">
-    <h1>Sistema de Pagamento <br>Baseado em Metas</h1>
-        <label for="vendedor">Nome do Vendedor:</label>
-        <input type="text" id="vendedor" name="vendedor" required><br><br>
+<form class="formulario" method="post">
+    <h1>Sistema de Pagamento Baseado em Metas</h1>
 
-        <label for="vendas_semanais">Meta semanal:</label>
-        <input type="number" id="vendas_semanais" name="vendas_semanais" min="0" step="0.01" required><br><br>
+    <label for="vendedor">Nome do Vendedor:</label>
+    <input type="text" id="vendedor" name="vendedor" required><br><br>
 
-        <label for="vendas_mensais">Meta mensal:</label>
-        <input type="number" id="vendas_mensais" name="vendas_mensais" min="0" step="0.01" required><br><br>
+    <label for="vsemanal1">Meta semana 1:</label>
+    <input type="number" id="vsemanal1" name="vsemanal1" min="0" step="0.01" required><br><br>
 
-        <button type="submit">Calcular</button>
-    </form>
+    <label for="vsemanal2">Meta semana 2:</label>
+    <input type="number" id="vsemanal2" name="vsemanal2" min="0" step="0.01" required><br><br>
+
+    <label for="vsemanal3">Meta semana 3:</label>
+    <input type="number" id="vsemanal3" name="vsemanal3" min="0" step="0.01" required><br><br>
+
+    <label for="vsemanal4">Meta semana 4:</label>
+    <input type="number" id="vsemanal4" name="vsemanal4" min="0" step="0.01" required><br><br>
+
+    <label for="vendas_mensais">Vendas Mensais:</label>
+    <input type="number" id="vendas_mensais" name="vendas_mensais" min="0" step="0.01" required><br><br>
+
+    <button type="submit">Calcular</button>
+</form>
 
     <div class="mensagem" >
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Pega os dados do formulário
-        $vendedor = $_POST["vendedor"];
-        $vendas_semanais = $_POST["vendas_semanais"];
-        $vendas_mensais = $_POST["vendas_mensais"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Pega os dados do formulário
+    $vendedor = $_POST["vendedor"];
+    $vsemanal1 = $_POST["vsemanal1"];
+    $vsemanal2 = $_POST["vsemanal2"];
+    $vsemanal3 = $_POST["vsemanal3"];
+    $vsemanal4 = $_POST["vsemanal4"];
+    $vendas_mensais = $_POST["vendas_mensais"];
 
-        // Valores definidos pela empresa
-        $meta_semanal = 20000; // Meta semanal definida
-        $meta_mensal = 80000; // Meta mensal definida
-        $salario_minimo = 1927.02; // Salário mínimo definido 
+    // Valores fixos
+    $meta_semanal = 20000; // Meta por semana
+    $meta_mensal = 80000; // Meta por mês
+    $salario_minimo = 1927.02; // Salário mínimo
 
-        // Verifica se as vendas ultrapassaram as metas propostas
+    // Inicializar variáveis para armazenar os bônus de cada semana
+    $bonus1 = 0;
+    $bonus2 = 0;
+    $bonus3 = 0;
+    $bonus4 = 0;
 
-        // Pela lógica verifica se as vendas mensais são maiores que as vendas semanais
-        if ($vendas_mensais > $vendas_semanais) {
-            // Se vendas mensais forem maiores que as vendas semanais
-
-            // Verifica se as vendas mensais são maiores ou iguais à meta mensal
-            if ($vendas_mensais >= $meta_mensal) {
-                // Calcula o valor do bônus para o excedente de meta mensal
-                $bonus_excedente_mensal = ($vendas_mensais - $meta_mensal) * 0.10;
-            } else {
-                // Se não ultrapassar a meta mensal, não terá bônus
-                $bonus_excedente_mensal = 0;
-            }
-
-            // Se vendas semanais forem maiores ou iguais à meta semanal
-            if ($vendas_semanais >= $meta_semanal) {
-                // Calcula o valor do bônus para o cumprimento da meta semanal
-                $bonus_meta_semanal = $meta_semanal * 0.01;
-                // Calcula o valor do bônus para o excedente de meta semanal
-                $bonus_excedente_semanal = ($vendas_semanais - $meta_semanal) * 0.05;
-            } else {
-                // Se não atingir a meta semanal, não terá bônus
-                $bonus_meta_semanal = 0;
-                $bonus_excedente_semanal = 0;
-            }
-
-            // Calcula o salário final considerando os bônus
-            $salario_final = $salario_minimo + $bonus_meta_semanal + $bonus_excedente_semanal + $bonus_excedente_mensal;
-
-            // Exibe o resultado
-            echo "<h2>Detalhes do seu Salário:</h2>";
-            echo "<p>Vendedor: $vendedor</p>"; // chama a variavel para o resultado
-            echo "<p>Salário Final: R$ " . number_format($salario_final, 2, ',', '.') . "</p>"; // formatação do numero
-            
-        } else {
-            // Se vendas mensais não forem maiores que as vendas semanais (Pela logica do sistema), exibe uma mensagem de erro
-            echo "<h2>Ops!</h2>";
-            echo "<p>Valores inválidos.</p>";
-            echo "<p>Por favor, insira valores válidos para as vendas semanais e mensais novamente.</p>";
+    // Testa a meta semanal na semana 1
+    if ($vsemanal1 >= $meta_semanal) {
+        $bonus1 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        if ($vsemanal1 > $meta_mensal) {
+            $bonus1 += ($vsemanal1 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
         }
     }
-    ?>
+
+    // Testa a meta semanal na semana 2
+    if ($vsemanal2 >= $meta_semanal) {
+        $bonus2 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        if ($vsemanal2 > $meta_mensal) {
+            $bonus2 += ($vsemanal2 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
+        }
+    }
+
+    // Testa a meta semanal na semana 3
+    if ($vsemanal3 >= $meta_semanal) {
+        $bonus3 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        if ($vsemanal3 > $meta_mensal) {
+            $bonus3 += ($vsemanal3 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
+        }
+    }
+
+    // Testa a meta semanal na semana 4
+    if ($vsemanal4 >= $meta_semanal) {
+        $bonus4 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        if ($vsemanal4 > $meta_mensal) {
+            $bonus4 += ($vsemanal4 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
+        }
+    }
+
+    // Calcular o salário final
+    $salario_final = $salario_minimo + $bonus1 + $bonus2 + $bonus3 + $bonus4;
+
+    // Exibir o resultado
+    echo "<p>Salário final de $vendedor: R$ " . number_format($salario_final, 2, ',', '.') . "</p>";
+}
+?>
+
     </div>
 </body>
 </html>
