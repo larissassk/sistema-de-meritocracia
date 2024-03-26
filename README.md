@@ -1,6 +1,6 @@
 # sistema-de-meritocracia
 
-# Índice
+## Índice
 1. [Sistema de Salário](#-sistema-de-sal%C3%A1rio)
    - [Metas e Valores](#%EF%B8%8F-metas-e-valores)
    - [Exemplo de funcionamento do sistema](#%EF%B8%8F-exemplo-de-funcionamento-do-sistema)
