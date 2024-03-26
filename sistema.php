@@ -13,20 +13,20 @@
 
         <label for="n_vendedor">Nome do Vendedor:</label><br>
         <input type="text" id="n_vendedor" name="n_vendedor" placeholder="Insira seu nome" style="width: 300px; height: 13px" required><br>
-        <h3>Vendas da semanas</h3>
+        
+        <h3>Insira sua meta semanal de vendas</h3>
         <?php for ($i = 1; $i <= 4; $i++) { ?>
         <label for="semana<?php echo $i; ?>">Semana <?php echo $i; ?>:</label><br>
-        <input type="number" id="semana<?php echo $i; ?>" name="semana<?php echo $i; ?>" style="width: 300px; height: 13px" required><br><br>
+        <input type="number" id="semana<?php echo $i; ?>" name="semana<?php echo $i; ?>" style="width: 300px; height: 13px"  required><br><br>
     <?php } ?>
    
-       
         <label for="Vendas_total_mes">Vendas total do mês:</label><br>
-        <input type="number" id="Vendas_total_mes" name="Vendas_total_mes" style="width: 300px; height: 13px" required><br><br>
+        <input type="number" id="Vendas_total_mes" name="Vendas_total_mes"  placeholder="Insira o total de vendas do mês" style="width: 300px; height: 13px" required><br><br>
        
         <input type="submit" value="Calcular">
     </form>
     </div>
-    
+
  <div class="mensagem">
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -63,7 +63,7 @@
            
              // Exibe o resultado
             echo "<div class='result'>";
-            echo "<p><strong>Olá $n_vendedor,</strong> abaixo esta o seu salario baseado nas metas alcançadas.</p>";
+            echo "<p><strong>Olá $n_vendedor,</strong> abaixo está o seu salário baseado nas metas alcançadas.</p>";
             echo "<h3>Salário Final: R$ " . number_format($salario_final, 2) . "</h3>";
             echo "</div>";
         }
