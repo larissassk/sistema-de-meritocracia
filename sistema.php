@@ -121,40 +121,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Testa a meta semanal na semana 1
     if ($vsemanal1 >= $meta_semanal) {
-        $bonus1 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        $bonus1 = $meta_semanal * 0.01; // recebe 1% sobre o valor da meta.
         if ($vsemanal1 > $meta_mensal) {
-            $bonus1 += ($vsemanal1 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
+            $bonus1 += ($vsemanal1 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
         }
     }
 
     // Testa a meta semanal na semana 2
     if ($vsemanal2 >= $meta_semanal) {
-        $bonus2 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        $bonus2 = $meta_semanal * 0.01; //  recebe 1% sobre o valor da meta.
         if ($vsemanal2 > $meta_mensal) {
-            $bonus2 += ($vsemanal2 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
+            $bonus2 += ($vsemanal2 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
         }
     }
 
     // Testa a meta semanal na semana 3
     if ($vsemanal3 >= $meta_semanal) {
-        $bonus3 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        $bonus3 = $meta_semanal * 0.01; // recebe 1% sobre o valor da meta.
         if ($vsemanal3 > $meta_mensal) {
-            $bonus3 += ($vsemanal3 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
+            $bonus3 += ($vsemanal3 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
         }
     }
 
     // Testa a meta semanal na semana 4
     if ($vsemanal4 >= $meta_semanal) {
-        $bonus4 = $meta_semanal * 0.01; // 1% sobre o valor da meta
+        $bonus4 = $meta_semanal * 0.01; // recebe 1% sobre o valor da meta.
         if ($vsemanal4 > $meta_mensal) {
-            $bonus4 += ($vsemanal4 - $meta_mensal) * 0.05; // 5% sobre o excedente da meta semanal
+            $bonus4 += ($vsemanal4 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
         }
     }
 
-    // Calcular o salário final
+    // Calcula o salário final
     $salario_final = $salario_minimo + $bonus1 + $bonus2 + $bonus3 + $bonus4;
 
-    // Exibir o resultado
+    // exibi o resultado 
     echo "<p>Salário final de $vendedor: R$ " . number_format($salario_final, 2, ',', '.') . "</p>";
 }
 ?>

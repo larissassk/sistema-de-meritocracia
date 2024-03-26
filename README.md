@@ -37,25 +37,25 @@ Este sistema automatiza o cálculo do salário dos vendedores, oferecendo uma ma
 - Para o excedente de meta semanal: Receberá 5% sobre o excedente da meta semanal.
 - Para o excedente de meta mensal: Receberá 10% sobre o excedente de meta mensal.
 
-### Exemplo de Funcionamento
+### Exemplo de Funcionamento 
 
 Aqui está um exemplo visual do sistema em funcionamento, demonstrando diferentes cenários com relação às metas de vendas:
 
 #### Abaixo da Meta
 
-![Abaixo da Meta](link_para_imagem_abaixo_da_meta.jpg)
+![Abaixo da Meta](link_)
 
 Neste exemplo, o vendedor não alcançou a meta semanal. Portanto, seu salário final será composto apenas pelo salário mínimo, já que ele não é elegível para receber nenhum bônus por ultrapassar as metas.
 
 #### Na Meta
 
-![Na Meta](link_para_imagem_na_meta.jpg)
+![Na Meta](link_)
 
 Neste caso, o vendedor atingiu exatamente a meta semanal. Assim, ele receberá o salário mínimo mais o bônus correspondente ao cumprimento da meta semanal.
 
 #### Acima da Meta
 
-![Acima da Meta](link_para_imagem_acima_da_meta.jpg)
+![Acima da Meta](link_)
 
 Aqui, o vendedor superou a meta semanal estabelecida. Ele receberá o salário mínimo, o bônus pelo cumprimento da meta semanal e também o bônus pelo excedente da meta semanal.
 
