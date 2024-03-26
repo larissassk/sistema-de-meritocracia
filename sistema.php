@@ -27,34 +27,40 @@
     </div>
  <div class="mensagem">
     <?php
+    // Verifica se o formulário foi submetido com o método POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['n_vendedor'], $_POST['Vendas_total_mes'])) {
+            //Pega os valores enviados pelo formulário
             $n_vendedor = $_POST['n_vendedor'];
             $vendas_semanais = [];
             for ($i = 1; $i <= 4; $i++) {
                 $vendas_semanais[] = $_POST['semana' . $i];
             }
             $Vendas_total_mes = $_POST['Vendas_total_mes'];
+             // Cria variáveis
             $salario_minimo = 1927.02;
             $meta_semanal = 20000;
             $meta_mensal = 80000;
             $b_semanal = 0;
             $b_mensal = 0;
-           
+           // Calcula o bônus semanal
+           //foreach para iterar sobre o array $vendas_semanais
+           // $vendas_semanais fica todas semanas do mes
             foreach ($vendas_semanais as $vendas_semanal) {
                 if ($vendas_semanal >= $meta_semanal) {
                     $b_semanal += ($vendas_semanal - $meta_semanal) * 0.05; 
                     $b_semanal += $meta_semanal * 0.01; 
                 }
             }
-           
+           // Calcula o bônus mensal
             if ($Vendas_total_mes >= $meta_mensal) {
                 $sobre_semanal = $Vendas_total_mes - $meta_mensal;
                 $b_mensal = $sobre_semanal * 0.1; 
             }
-           
+           // Calcula o salário final
             $salario_final = $salario_minimo + $b_semanal + $b_mensal;
            
+             // Exibe o resultado
             echo "<div class='result'>";
             echo "<p>Nome do Vendedor: $n_vendedor</p>";
             echo "<p>Salário Final: R$ " . number_format($salario_final, 2) . "</p>";
