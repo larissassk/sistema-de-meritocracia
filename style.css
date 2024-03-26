@@ -1,5 +1,5 @@
 body {
-    background-color: #DFDCE3; /* beje */
+    background-color: #DFDCE3; 
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -12,7 +12,7 @@ body {
 }
 
 .formulario {
-    background-color: #465C8B; /* azul */
+    background-color: #465C8B; 
     color: white;
     padding: 15px;
     margin: 10px;
@@ -24,7 +24,7 @@ body {
 }
 
 .mensagem {
-    background-color: #93C178; /* verde */
+    background-color: #93C178; 
     color: white;
     padding: 15px;
     margin: 20px;
@@ -47,11 +47,11 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-    background-color: #93C178; /* azul */
+    background-color: #93C178; 
     color: white;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #344a7d; /* tom mais escuro de azul */
+    background-color: #344a7d; 
 }
