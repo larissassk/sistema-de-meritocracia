@@ -1,4 +1,15 @@
 # sistema-de-meritocracia
+
+# Índice
+1. [Sistema de Salário](#-sistema-de-sal%C3%A1rio)
+   - [Metas e Valores](#%EF%B8%8F-metas-e-valores)
+   - [Exemplo de funcionamento do sistema](#%EF%B8%8F-exemplo-de-funcionamento-do-sistema)
+   - [Exemplos](#exemplos)
+   - [Funções de cada linguagem](#-fun%C3%A7%C3%B5es-de-cada-linguagem)
+2. [Estilizando](#-estilizando)
+3. [Referências](#-refer%C3%AAncias)
+4. [Feito por](#-feito-por)
+
 # 📈 Sistema de Salário 
 O Sistema de Salário para Vendedores simplifica o cálculo do salário com base nas *metas de vendas semanais e mensais.* Os vendedores inserem seus nomes e metas de vendas em um formulário, e um script PHP realiza os cálculos, mostrando o salário final na página, é um site responsivo ele se adpta em diferentes aparelhos.
 
