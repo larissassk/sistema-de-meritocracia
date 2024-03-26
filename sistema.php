@@ -1,164 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Salário</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #465C8B;
-            font-family: Arial, sans-serif; /* Fonte padrão */
-        }
-
-        .formulario {
-            background-color: #DFDCE3;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 30px;
-            border: 2px solid #93C178;
-            border-radius: 5px;
-        }
-
-        .formulario h1 {
-            color: #465C8B; /* Cor alterada para destacar o título */
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .formulario label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333333; /* Cor de texto padrão */
-        }
-
-        .formulario input {
-            width: calc(100% - 16px);
-            padding: 8px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 1px solid #cccccc; /* Cor da borda padrão */
-            border-radius: 3px;
-            font-size: 14px;
-        }
-
-        .formulario button[type="submit"] {
-            background-color: #93C178;
-            color: white;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            padding: 10px 0;
-            border-radius: 3px;
-        }
-
-        .formulario button[type="submit"]:hover {
-            background-color: #465C8B; 
-        }
-
-        .mensagem {
-            background-color: #DFDCE3;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #93C178;
-            border-radius: 5px;
-            color: #333333;
-            text-align: center;
-        }
-    </style>
+    <title>Sistema salarial</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<div class="formulario">
 <body>
-<form class="formulario" method="post">
-    <h1>Sistema de Pagamento Baseado em Metas</h1>
+    <h2>Calculadora de Pagamento</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-    <label for="vendedor">Nome do Vendedor:</label>
-    <input type="text" id="vendedor" name="vendedor" required><br><br>
-
-    <label for="vsemanal1">Meta semana 1:</label>
-    <input type="number" id="vsemanal1" name="vsemanal1" min="0" step="0.01" required><br><br>
-
-    <label for="vsemanal2">Meta semana 2:</label>
-    <input type="number" id="vsemanal2" name="vsemanal2" min="0" step="0.01" required><br><br>
-
-    <label for="vsemanal3">Meta semana 3:</label>
-    <input type="number" id="vsemanal3" name="vsemanal3" min="0" step="0.01" required><br><br>
-
-    <label for="vsemanal4">Meta semana 4:</label>
-    <input type="number" id="vsemanal4" name="vsemanal4" min="0" step="0.01" required><br><br>
-
-    <label for="vendas_mensais">Vendas Mensais:</label>
-    <input type="number" id="vendas_mensais" name="vendas_mensais" min="0" step="0.01" required><br><br>
-
-    <button type="submit">Calcular</button>
-</form>
-
-    <div class="mensagem" >
+        <label for="n_vendedor">Nome do Vendedor:</label><br>
+        <input type="text" id="n_vendedor" name="n_vendedor" required><br><br>
+        <h2>Vendas da semanas</h2>
+        <?php for ($i = 1; $i <= 4; $i++) { ?>
+            <label for="semana<?php echo $i; ?>">Semana  <?php echo $i; ?>:</label><br>
+            <input type="number" id="semana<?php echo $i; ?>" name="semana<?php echo $i; ?>" required><br><br>
+        <?php } ?>
+       
+        <label for="Vendas_total_mes">Vendas total do mês:</label><br>
+        <input type="number" id="Vendas_total_mes" name="Vendas_total_mes" required><br><br>
+       
+        <input type="submit" value="Calcular Salário">
+    </form>
+    </div>
+ <div class="mensagem">
     <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Pega os dados do formulário
-    $vendedor = $_POST["vendedor"];
-    $vsemanal1 = $_POST["vsemanal1"];
-    $vsemanal2 = $_POST["vsemanal2"];
-    $vsemanal3 = $_POST["vsemanal3"];
-    $vsemanal4 = $_POST["vsemanal4"];
-    $vendas_mensais = $_POST["vendas_mensais"];
-
-    // Valores fixos
-    $meta_semanal = 20000; // Meta por semana
-    $meta_mensal = 80000; // Meta por mês
-    $salario_minimo = 1927.02; // Salário mínimo
-
-    // Inicializar variáveis para armazenar os bônus de cada semana
-    $bonus1 = 0;
-    $bonus2 = 0;
-    $bonus3 = 0;
-    $bonus4 = 0;
-
-    // Testa a meta semanal na semana 1
-    if ($vsemanal1 >= $meta_semanal) {
-        $bonus1 = $meta_semanal * 0.01; // recebe 1% sobre o valor da meta.
-        if ($vsemanal1 > $meta_mensal) {
-            $bonus1 += ($vsemanal1 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['n_vendedor'], $_POST['Vendas_total_mes'])) {
+            $n_vendedor = $_POST['n_vendedor'];
+            $vendas_semanais = [];
+            for ($i = 1; $i <= 4; $i++) {
+                $vendas_semanais[] = $_POST['semana' . $i];
+            }
+            $Vendas_total_mes = $_POST['Vendas_total_mes'];
+            $salario_minimo = 1927.02;
+            $meta_semanal = 20000;
+            $meta_mensal = 80000;
+            $b_semanal = 0;
+            $b_mensal = 0;
+           
+            foreach ($vendas_semanais as $vendas_semanal) {
+                if ($vendas_semanal >= $meta_semanal) {
+                    $b_semanal += ($vendas_semanal - $meta_semanal) * 0.05; 
+                    $b_semanal += $meta_semanal * 0.01; 
+                }
+            }
+           
+            if ($Vendas_total_mes >= $meta_mensal) {
+                $sobre_semanal = $Vendas_total_mes - $meta_mensal;
+                $b_mensal = $sobre_semanal * 0.1; 
+            }
+           
+            $salario_final = $salario_minimo + $b_semanal + $b_mensal;
+           
+            echo "<div class='result'>";
+            echo "<p>Nome do Vendedor: $n_vendedor</p>";
+            echo "<p>Salário Final: R$ " . number_format($salario_final, 2) . "</p>";
+            echo "</div>";
         }
     }
-
-    // Testa a meta semanal na semana 2
-    if ($vsemanal2 >= $meta_semanal) {
-        $bonus2 = $meta_semanal * 0.01; //  recebe 1% sobre o valor da meta.
-        if ($vsemanal2 > $meta_mensal) {
-            $bonus2 += ($vsemanal2 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
-        }
-    }
-
-    // Testa a meta semanal na semana 3
-    if ($vsemanal3 >= $meta_semanal) {
-        $bonus3 = $meta_semanal * 0.01; // recebe 1% sobre o valor da meta.
-        if ($vsemanal3 > $meta_mensal) {
-            $bonus3 += ($vsemanal3 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
-        }
-    }
-
-    // Testa a meta semanal na semana 4
-    if ($vsemanal4 >= $meta_semanal) {
-        $bonus4 = $meta_semanal * 0.01; // recebe 1% sobre o valor da meta.
-        if ($vsemanal4 > $meta_mensal) {
-            $bonus4 += ($vsemanal4 - $meta_mensal) * 0.05; // recebe 5% sobre o excedente da meta semanal.
-        }
-    }
-
-    // Calcula o salário final
-    $salario_final = $salario_minimo + $bonus1 + $bonus2 + $bonus3 + $bonus4;
-
-    // exibi o resultado 
-    echo "<p>Salário final de $vendedor: R$ " . number_format($salario_final, 2, ',', '.') . "</p>";
-}
-?>
-
+    ?>
     </div>
 </body>
 </html>
