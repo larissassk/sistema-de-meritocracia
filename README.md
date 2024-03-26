@@ -1,6 +1,6 @@
 # sistema-de-meritocracia
 # 📈 Sistema de Salário 
-O Sistema de Salário para Vendedores simplifica o cálculo do salário com base nas *metas de vendas semanais e mensais.* Os vendedores inserem seus nomes e metas de vendas em um formulário, e um script PHP realiza os cálculos, mostrando o salário final na página.
+O Sistema de Salário para Vendedores simplifica o cálculo do salário com base nas *metas de vendas semanais e mensais.* Os vendedores inserem seus nomes e metas de vendas em um formulário, e um script PHP realiza os cálculos, mostrando o salário final na página, é um site responsivo ele se adpta em diferentes aparelhos.
 
 ## ✔️ Metas e Valores: 
 1- Metas Semanais: $20,000  
@@ -11,7 +11,7 @@ O Sistema de Salário para Vendedores simplifica o cálculo do salário com base
 6- Para o excedente de meta mensal: Receberá 10% sobre o excedente de meta mensal.  
 
 ## ⚙️ Exemplo de funcionamento do sistema 
-<img src="img/bate-meta.png" width="70%"><br>
+<img src="img/bate-meta.png" width="50%"><br>
 - Lembrando que...  
 João deseja calcular seu salário com vendas de R$ 20.000,00 por semana durante 4 semanas, seguindo as regras propostas:
 
