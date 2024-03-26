@@ -22,14 +22,8 @@ O sistema a ser entregue solicitará o nome do vendedor, os valores das metas se
 
 Este sistema automatiza o cálculo do salário dos vendedores, oferecendo uma maneira justa e transparente de determinar a compensação com base no desempenho em relação às metas estabelecidas.
 
-## Funcionalidades
 
-- Formulário para que o usuário (vendedor) possa inserir o (nome, vendas semanais e vendas mensais).
-- Cálculo automático gerado pelas metas adicionadas do salário final.
-- Exibição do resultado do salário ou mensagem de erro caso os dados inseridos não estejam corretos ou de acordo com as condições.
-
-
-## Valores Definidos pela empresa
+## Valores Definidos pela empresa explicar
 - Metas Semanais: $20,000 
 - Metas Mensais: $80,000
 - Salário Mínimo: $1927.02
@@ -59,22 +53,21 @@ Neste caso, o vendedor atingiu exatamente a meta semanal. Assim, ele receberá o
 
 Aqui, o vendedor superou a meta semanal estabelecida. Ele receberá o salário mínimo, o bônus pelo cumprimento da meta semanal e também o bônus pelo excedente da meta semanal.
 
+## Função de cada linguagem 
+
+ **Formulário HTML:** O código começa com um formulário HTML onde os usuários podem inserir informações, como o nome do vendedor, vendas semanais para cada uma das quatro semanas e vendas totais do mês.
+
+**Processamento PHP:** Após o envio do formulário (quando o método de requisição é POST), o PHP processa os dados enviados. Ele verifica se os campos do nome do vendedor e as vendas totais do mês foram preenchidos. Em seguida, ele calcula o salário final do vendedor com base nas vendas semanais e mensais.
+
+**Cálculo do Salário:** O código PHP define algumas variáveis, como o salário mínimo, metas semanais e mensais de vendas e bônus semanal e mensal. Ele itera sobre as vendas semanais para calcular o bônus semanal, adicionando um bônus extra se as vendas excederem a meta semanal. Em seguida, verifica se as vendas totais do mês atingiram a meta mensal e calcula o bônus mensal, se aplicável. Por fim, calcula o salário final somando o salário mínimo com os bônus semanal e mensal.
+
+**Exibição do Resultado:** O resultado do cálculo é exibido abaixo do formulário, mostrando o nome do vendedor e o salário final formatado em reais (R$).
+
+- Esse código permite calcular o salário final de um vendedor com base nas vendas semanais e mensais, aplicando bônus de acordo com metas predefinidas.
+
 ### Explicação das Contas
 
-- **Salário Final = Salário Mínimo + Bônus por Cumprimento da Meta Semanal + Bônus por Excedente da Meta Semanal + Bônus por Excedente da Meta Mensal**
 
-    - **Salário Mínimo:** Valor fixo definido pela empresa 1927,02
-    - **Bônus por Cumprimento da Meta Semanal:** 1% do valor da meta semanal.
-    - **Bônus por Excedente da Meta Semanal:** 5% sobre o valor excedente da meta semanal.
-## Linguagens Utilizadas:
-- HTML Formulário:
-O formulário permite que o usuário insira o nome do vendedor, as metas de vendas semanais para cada uma das quatro semanas e o total de vendas mensais. Cada entrada é um campo de texto ou número com um rótulo descritivo.
-
-- PHP:
-O script PHP é acionado quando o formulário é enviado (método POST). Ele obtém os dados do formulário usando a variável global $_POST. Em seguida, ele define algumas variáveis com valores fixos, como a meta semanal e mensal, e o salário mínimo. Para cada semana, ele verifica se a meta semanal foi alcançada e calcula o bônus com base nisso. Se a venda semanal exceder a meta mensal, um bônus adicional é calculado sobre o excedente. Finalmente, calcula o salário final adicionando o salário mínimo aos bônus de cada semana. O resultado é exibido na página como uma mensagem indicando o salário final do vendedor.
-
-- CSS:
-O código CSS define o estilo visual do formulário e da mensagem de saída. Ele configura o layout, cores, fontes e estilos dos elementos HTML para uma melhor apresentação.
 
 ### 🎨 Estilizando
 - Foi usada a paleta de *cor nº 45* do site Mambo Mambo, que usa tons de amarelo, verde e azul. Esta combinação transmite uma sensação tropical e descontraída. [Ver paleta](https://www.canva.com/pt_br/aprenda/cores-para-sites-50-paginas-impactantes/)
