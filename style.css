@@ -1,25 +1,17 @@
 body {
     background-color: #DFDCE3; 
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .formulario {
     background-color: #465C8B; 
     color: white;
     padding: 15px;
-    margin: 10px;
+    margin: 10px auto;
     border-radius: 10px;
-    width: 400px;
-    height: 650px;
-    border: 1px solid #93C178;
+    max-width: 400px;
     text-align: center;
 }
 
@@ -27,9 +19,9 @@ body {
     background-color: #93C178; 
     color: white;
     padding: 15px;
-    margin: 20px;
+    margin: 20px auto;
     border-radius: 10px;
-    width: 300px;
+    max-width: 300px;
 }
 
 label {
