@@ -23,12 +23,12 @@
         <label for="Vendas_total_mes">Vendas total do mês:</label><br>
         <input type="number" id="Vendas_total_mes" name="Vendas_total_mes" style="width: 300px; height: 13px" required><br><br>
        
-        <input type="submit" value="Calcular Salário">
+        <input type="submit" value="Calcular">
     </form>
     </div>
+    
  <div class="mensagem">
     <?php
-    // Verifica se o formulário foi submetido com o método POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['n_vendedor'], $_POST['Vendas_total_mes'])) {
             //Pega os valores enviados pelo formulário
