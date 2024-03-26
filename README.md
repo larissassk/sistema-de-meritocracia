@@ -1,29 +1,12 @@
 # sistema-de-meritocracia
 # Sistema de Salário
 - O Sistema de Salário para Vendedores simplifica o cálculo do salário com base nas metas de vendas semanais e mensais. Os vendedores inserem seus nomes e metas de vendas em um formulário. O script PHP realiza os cálculos e mostra o salário final na página. 
-
-## O que é esse sistema?
-Este sistema de salário é baseado em metas para vendedores e possui as seguintes regras:
-
-Cada vendedor tem um salário mínimo garantido.
-Cada vendedor tem uma meta de vendas semanal, totalizando uma meta mensal.
-Se um vendedor ultrapassar a meta semanal, ele receberá um bônus sobre o excedente da meta semanal.
-Se um vendedor exceder a meta mensal, ele receberá um bônus sobre o excedente da meta mensal, desde que tenha cumprido todas as metas semanais.
-Os valores dos bônus são os seguintes:
-
-Para o cumprimento da meta semanal: 1% sobre o valor da meta.
-Para o excedente da meta semanal: 5% sobre o excedente da meta semanal.
-Para o excedente da meta mensal: 10% sobre o excedente da meta mensal.
-Por exemplo, se um vendedor atingir ou ultrapassar as metas todas as semanas do mês, ele receberá bônus calculados conforme descrito acima. O salário final do vendedor será o salário mínimo mais os bônus calculados.
-
-Caso um vendedor não consiga bater ao menos uma meta semanal, ele perderá o direito ao bônus sobre o excedente da meta mensal, recebendo apenas o bônus sobre o excedente da meta semanal nas semanas em que conseguir este feito.
-
 O sistema a ser entregue solicitará o nome do vendedor, os valores das metas semanal e mensal, calculará o salário final com base nessas informações e exibirá o resultado ao usuário para efetuar o pagamento do salário.
-
 Este sistema automatiza o cálculo do salário dos vendedores, oferecendo uma maneira justa e transparente de determinar a compensação com base no desempenho em relação às metas estabelecidas.
 
 
-## Valores Definidos pela empresa explicar
+## Valores Definidos
+
 - Metas Semanais: $20,000 
 - Metas Mensais: $80,000
 - Salário Mínimo: $1927.02
@@ -31,27 +14,43 @@ Este sistema automatiza o cálculo do salário dos vendedores, oferecendo uma ma
 - Para o excedente de meta semanal: Receberá 5% sobre o excedente da meta semanal.
 - Para o excedente de meta mensal: Receberá 10% sobre o excedente de meta mensal.
 
-### Exemplo de Funcionamento 
-
-Aqui está um exemplo visual do sistema em funcionamento, demonstrando diferentes cenários com relação às metas de vendas:
-
-#### Abaixo da Meta
-
-![Abaixo da Meta](link_)
-
-Neste exemplo, o vendedor não alcançou a meta semanal. Portanto, seu salário final será composto apenas pelo salário mínimo, já que ele não é elegível para receber nenhum bônus por ultrapassar as metas.
-
-#### Na Meta
+#### Exemplo de Funcionamento 
 
 ![Na Meta](link_)
 
-Neste caso, o vendedor atingiu exatamente a meta semanal. Assim, ele receberá o salário mínimo mais o bônus correspondente ao cumprimento da meta semanal.
+João deseja calcular seu salário com vendas de R$ 20.000,00 por semana durante 4 semanas, seguindo as regras propostas:
 
-#### Acima da Meta
+É DEFINIDO QUE:
+- Salário Mínimo: R$ 1927,02
+- Meta Semanal: R$ 20.000,00
+- Meta Mensal: R$ 80.000,00  
+- Bônus para cumprimento de meta semanal: 1% sobre o valor da meta semanal
+- Bônus para excedente de meta semanal: 5% sobre o excedente da meta semanal
+- Bônus para excedente de meta mensal: 10% sobre o excedente da meta mensal
 
-![Acima da Meta](link_)
+Vamos calcular o salário final de João que é de R$ 20.000,00 de vendas por semana durante as 4 semanas:
 
-Aqui, o vendedor superou a meta semanal estabelecida. Ele receberá o salário mínimo, o bônus pelo cumprimento da meta semanal e também o bônus pelo excedente da meta semanal.
+**Bônus para cumprimento da meta semanal:**
+
+R$ 20.000,00 (meta semanal) * 1% = R$ 200,00 (por semana)  
+R$ 200,00 * 4 semanas = R$ 800,00
+
+**Bônus para excedente da meta semanal:**
+
+Não há excedente de meta semanal porque João atingiu exatamente a meta todas as semanas.
+
+**Bônus para excedente da meta mensal:**
+
+Não há excedente de meta mensal porque João não ultrapassou a meta mensal de R$ 80.000,00.
+
+Agora, vamos calcular o salário final:
+
+Salário Final = Salário Mínimo + Bônus para cumprimento da meta semanal  
+= R$ 1927,02 + R$ 800,00  
+= R$ 2727,02
+
+- Sendo assim, o salário final de João que atinge R$ 20.000,00 de vendas por semana durante 4 semanas é de **R$ 2727,02**.
+
 
 ## Função de cada linguagem 
 

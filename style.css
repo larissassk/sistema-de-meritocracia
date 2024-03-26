@@ -19,6 +19,8 @@ body {
     border-radius: 10px;
     width: 400px;
     height: 650px;
+    border: 1px solid #93C178;
+    text-align: center;
 }
 
 .mensagem {

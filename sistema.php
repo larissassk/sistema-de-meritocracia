@@ -8,12 +8,12 @@
 </head>
 <div class="formulario">
 <body>
-<h2>Calculadora de Pagamento</h2>
+<h1>Calculadora de Pagamento</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
         <label for="n_vendedor">Nome do Vendedor:</label><br>
-        <input type="text" id="n_vendedor" name="n_vendedor" placeholder="Insira seu nome" required><br>
-        <h2>Vendas da semanas</h2>
+        <input type="text" id="n_vendedor" name="n_vendedor" placeholder="Insira seu nome" style="width: 300px; height: 13px" required><br>
+        <h3>Vendas da semanas</h3>
         <?php for ($i = 1; $i <= 4; $i++) { ?>
         <label for="semana<?php echo $i; ?>">Semana <?php echo $i; ?>:</label><br>
         <input type="number" id="semana<?php echo $i; ?>" name="semana<?php echo $i; ?>" style="width: 300px; height: 13px" required><br><br>
@@ -21,7 +21,7 @@
    
        
         <label for="Vendas_total_mes">Vendas total do mês:</label><br>
-        <input type="number" id="Vendas_total_mes" name="Vendas_total_mes" required><br><br>
+        <input type="number" id="Vendas_total_mes" name="Vendas_total_mes" style="width: 300px; height: 13px" required><br><br>
        
         <input type="submit" value="Calcular Salário">
     </form>
