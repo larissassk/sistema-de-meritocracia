@@ -8,11 +8,11 @@
 </head>
 <div class="formulario">
 <body>
-    <h2>Calculadora de Pagamento</h2>
+<h2>Calculadora de Pagamento</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
         <label for="n_vendedor">Nome do Vendedor:</label><br>
-        <input type="text" id="n_vendedor" name="n_vendedor" required><br><br>
+        <input type="text" id="n_vendedor" name="n_vendedor" required><br>
         <h2>Vendas da semanas</h2>
         <?php for ($i = 1; $i <= 4; $i++) { ?>
             <label for="semana<?php echo $i; ?>">Semana  <?php echo $i; ?>:</label><br>
@@ -62,8 +62,8 @@
            
              // Exibe o resultado
             echo "<div class='result'>";
-            echo "<p>Nome do Vendedor: $n_vendedor</p>";
-            echo "<p>Salário Final: R$ " . number_format($salario_final, 2) . "</p>";
+            echo "<p><strong>Nome do Vendedor:</strong> $n_vendedor</p>";
+            echo "<h3>Salário Final: R$ " . number_format($salario_final, 2) . "</h3>";
             echo "</div>";
         }
     }
