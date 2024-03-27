@@ -5,6 +5,7 @@
    - [Metas e Valores](#%EF%B8%8F-metas-e-valores)
    - [Exemplo de funcionamento do sistema](#%EF%B8%8F-exemplo-de-funcionamento-do-sistema)
    - [Exemplos](#exemplos)
+   - [Feedback](#feedback-detalhado)
    - [Funções de cada linguagem](#-fun%C3%A7%C3%B5es-de-cada-linguagem)
 2. [Estilizando](#-estilizando)
 3. [Referências](#-refer%C3%AAncias)
@@ -72,8 +73,8 @@ Salário Final = Salário Mínimo + Bônus para cumprimento da meta semanal
  <img src="img/acima-meta.png" width="40%"><br>
 
 ## Feedback detalhado
-É exibido o resultado do salário final do vendedor conforme os valores inseridos, e um feedback do salário com base nas metas com a bonificação.  
-- Exemplo ao atingir 21 mil em vendas durante 4 semanas totaliza 84 mil de vendas mensal aqui esta o feedback detalhado abaixo:  
+o feedback calcula o salário final do vendedor. E mostra ao vendedor como seu desempenho afeta diretamente sua remuneração exibindo o bonus mensal e semanal.  
+- aqui esta o feedback detalhado abaixo:  
 <img src="img/feedback-det.png" width="40%"><br>
 
 ## 📌 Funções de cada linguagem 
