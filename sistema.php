@@ -33,17 +33,20 @@
             if (isset($_POST['n_vendedor'], $_POST['Vendas_total_mes'])) {
                 //Pega os valores enviados pelo formulário
                 $n_vendedor = $_POST['n_vendedor'];
+                //loop
                 $vendas_semanais = [];
                 for ($i = 1; $i <= 4; $i++) {
                     $vendas_semanais[] = $_POST['semana' . $i];
                 }
                 $Vendas_total_mes = $_POST['Vendas_total_mes'];
+
                 // Cria variáveis
                 $salario_minimo = 1927.02;
                 $meta_semanal = 20000;
                 $meta_mensal = 80000;
                 $b_semanal = 0;
                 $b_mensal = 0;
+
                 // Calcula o bônus semanal
                 //foreach para iterar sobre o array $vendas_semanais
                 // $vendas_semanais fica todas semanas do mes
@@ -61,10 +64,12 @@
                 // Calcula o salário final
                 $salario_final = $salario_minimo + $b_semanal + $b_mensal;
             
-                // Exibe o resultado
+               // Exibe o resultado
                 echo "<div class='result'>";
                 echo "<p><strong>Olá $n_vendedor,</strong> abaixo está o seu salário baseado nas metas alcançadas.</p>";
                 echo "<h3>Salário Final: R$ " . number_format($salario_final, 2) . "</h3>";
+                echo "<p>Bônus Semanal: R$ " . number_format($b_semanal, 2) . "</p>";
+                echo "<p>Bônus Mensal: R$ " . number_format($b_mensal, 2) . "</p>";
                 echo "</div>";
             }
         }
