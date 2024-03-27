@@ -71,6 +71,11 @@ Salário Final = Salário Mínimo + Bônus para cumprimento da meta semanal
 - Adicionando em todas semanas 30.000 o valor mensal totaliza 120.000.  
  <img src="img/acima-meta.png" width="40%"><br>
 
+## Feedback detalhado
+É exibido o resultado do salário final do vendedor conforme os valores inseridos, e um feedback do salário com base nas metas com a bonificação.  
+- Exemplo ao atingir 21 mil em vendas durante 4 semanas totaliza 84 mil de vendas mensal aqui esta o feedback detalhado abaixo:  
+<img src="img/feedback-det.png" width="40%"><br>
+
 ## 📌 Funções de cada linguagem 
 
 **HTML:** O código começa com um formulário HTML onde os usuários podem inserir informações, como o nome do vendedor, vendas semanais para cada uma das quatro semanas e vendas totais do mês.
