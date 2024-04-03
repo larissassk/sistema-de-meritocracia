@@ -83,7 +83,7 @@ o feedback calcula o salário final do vendedor. E mostra ao vendedor como seu d
 
 **PHP:** depois do envio do formulário (quando o método de requisição é POST), o PHP processa os dados enviados. Verifica se os campos do nome do vendedor e as vendas totais do mês foram preenchidos. Em seguida, ele calcula o salário final do vendedor com base nas vendas semanais e mensais.
 
-**Cálculo do Salário:** O código PHP define algumas variáveis, como o salário mínimo, metas semanais e mensais de vendas e bônus semanal e mensal. Ele itera sobre as vendas semanais para calcular o bônus semanal, adicionando um bônus extra se as vendas excederem a meta semanal. Em seguida, verifica se as vendas totais do mês atingiram a meta mensal e calcula o bônus mensal, se aplicável. Por fim, calcula o salário final somando o salário mínimo com os bônus semanal e mensal.
+**Cálculo do Salário:** Após o envio do formulário, o PHP processa os dados. Calcula o salário final do vendedor com base nas vendas semanais e mensais, utilizando o método for para gerar uma repetição nas semanas.
 
 **Exibe Resultado:** O resultado do cálculo é mostrado abaixo do formulário, mostrando o nome do vendedor e o salário final formatado em reais (R$).
 
