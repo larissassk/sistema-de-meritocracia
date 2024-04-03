@@ -15,9 +15,9 @@
 O Sistema de Salário para Vendedores simplifica o cálculo do salário com base nas *metas de vendas semanais e mensais.* Os vendedores inserem seus nomes e metas de vendas em um formulário, e um script PHP realiza os cálculos, mostrando o salário final na página, é um site responsivo ele se adpta em diferentes aparelhos.
 
 ## ✔️ Metas e Valores: 
-1- Metas Semanais: $20,000  
-2- Metas Mensais: $80,000  
-3- Salário Mínimo: $1927.02  
+1- Metas Semanais: $20.000  
+2- Metas Mensais: $80.000  
+3- Salário Mínimo: $1.927,02  
 4- Para o cumprimento de meta semanal: receberá  1% sobre o valor da meta.  
 5- Para o excedente de meta semanal: Receberá 5% sobre o excedente da meta semanal.  
 6- Para o excedente de meta mensal: Receberá 10% sobre o excedente de meta mensal.  
@@ -79,13 +79,13 @@ o feedback calcula o salário final do vendedor. E mostra ao vendedor como seu d
 
 ## 📌 Funções de cada linguagem 
 
-**HTML:** O código começa com um formulário HTML onde os usuários podem inserir informações, como o nome do vendedor, vendas semanais para cada uma das quatro semanas e vendas totais do mês.
+**HTML:**  Tem um formulário onde os usuários podem preencher com nome do vendedor, vendas semanais para cada uma das quatro semanas e vendas totais do mês.
 
-**PHP:** Após o envio do formulário (quando o método de requisição é POST), o PHP processa os dados enviados. Ele verifica se os campos do nome do vendedor e as vendas totais do mês foram preenchidos. Em seguida, ele calcula o salário final do vendedor com base nas vendas semanais e mensais.
+**PHP:** depois do envio do formulário (quando o método de requisição é POST), o PHP processa os dados enviados. Verifica se os campos do nome do vendedor e as vendas totais do mês foram preenchidos. Em seguida, ele calcula o salário final do vendedor com base nas vendas semanais e mensais.
 
 **Cálculo do Salário:** O código PHP define algumas variáveis, como o salário mínimo, metas semanais e mensais de vendas e bônus semanal e mensal. Ele itera sobre as vendas semanais para calcular o bônus semanal, adicionando um bônus extra se as vendas excederem a meta semanal. Em seguida, verifica se as vendas totais do mês atingiram a meta mensal e calcula o bônus mensal, se aplicável. Por fim, calcula o salário final somando o salário mínimo com os bônus semanal e mensal.
 
-**Exibição do Resultado:** O resultado do cálculo é exibido abaixo do formulário, mostrando o nome do vendedor e o salário final formatado em reais (R$).
+**Exibe Resultado:** O resultado do cálculo é mostrado abaixo do formulário, mostrando o nome do vendedor e o salário final formatado em reais (R$).
 
 ## 🎨 Estilizando
 - Foi usada a paleta de *cor nº 45* do site Mambo Mambo, que usa tons de amarelo, verde e azul. Esta combinação transmite uma sensação tropical e descontraída. [Ver paleta](https://www.canva.com/pt_br/aprenda/cores-para-sites-50-paginas-impactantes/)
@@ -94,7 +94,7 @@ o feedback calcula o salário final do vendedor. E mostra ao vendedor como seu d
 ### 📚 Referências
 
 - [Piso Regional do Paraná](https://www.aen.pr.gov.br/Noticia/Maior-do-Brasil-governador-confirma-novo-Piso-Regional-que-vai-de-R-18-mil-R-21-mil#:~:text=Na%20primeira%2C%20que%20contempla%20os,de%20R%24%201.927%2C02/)
-- [PDF Contexto]()
+- PDF
 
 ## 👩‍💻 Feito por:
 
